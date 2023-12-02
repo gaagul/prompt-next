@@ -4,18 +4,20 @@ import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
 function PromptCardList({ data, handleTagClick }) {
-  return <div className="mt-6 prompt_layout">
-    {data.map(post => (
-      <PromptCard key={post.id} post={post} handleTagClick={handleTagClick} />
-    ))}
-  </div>
+  return (
+    <div className="mt-6 prompt_layout">
+      {data.map((post) => (
+        <PromptCard key={post.id} post={post} handleTagClick={handleTagClick} />
+      ))}
+    </div>
+  );
 }
 
 function Feed() {
   const [searchTerm, setSearchTerm] = useState("");
   const [posts, setPosts] = useState([]);
 
-  const handleSearchTermChnage = e => {
+  const handleSearchTermChnage = (e) => {
     setSearchTerm(e.target.value);
   };
 

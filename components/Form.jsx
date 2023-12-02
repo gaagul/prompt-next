@@ -22,7 +22,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
           <textarea
             value={post.prompt}
-            onChange={e => setPost({ ...post, prompt: e.target.value })}
+            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder="Write your post here"
             required
             className="form_textarea"
@@ -38,7 +38,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           </span>
           <input
             value={post.tag}
-            onChange={e => setPost({ ...post, tag: e.target.value })}
+            onChange={(e) => setPost({ ...post, tag: e.target.value })}
             type="text"
             placeholder="#Tag"
             required

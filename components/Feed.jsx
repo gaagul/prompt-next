@@ -24,14 +24,7 @@ function Feed() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`/api/prompt`, {
-        method: "GET",
-        headers: {
-          'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
-          'Pragma': 'no-cache',
-          'Expires': '0',
-        },
-      });
+      const res = await fetch(`/api/prompt`, { cache: "no-store" });
       const data = await res.json();
       console.log("res data", data);
       setPosts(data);

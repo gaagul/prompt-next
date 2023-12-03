@@ -20,14 +20,13 @@ function Feed() {
   const handleSearchTermChnage = (e) => {
     setSearchTerm(e.target.value);
   };
-  console.log(posts);
+  console.log("posts state", posts);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch(`/api/prompt`);
-      console.log("res", res);
       const data = await res.json();
-
+      console.log("res data", data);
       setPosts(data);
     };
 

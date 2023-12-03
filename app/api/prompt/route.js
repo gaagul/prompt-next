@@ -6,9 +6,15 @@ export const GET = async (request) => {
         await connectToDB()
 
         const prompts = await Prompt.find({}).populate('creator')
-        console.log("from inside", prompts)
 
-        return new Response(JSON.stringify(prompts), { status: 200 })
+        return new Response(JSON.stringify(prompts), {
+          status: 200,
+          headers: {
+            'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+            'Pragma': 'no-cache',
+            'Expires': '0',
+          },
+        })
     } catch (error) {
         return new Response("Failed to fetch all prompts", { status: 500 })
     }

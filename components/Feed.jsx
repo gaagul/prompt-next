@@ -25,6 +25,7 @@ function Feed() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch(`/api/prompt`);
+      console.log("res", res);
       const data = await res.json();
 
       setPosts(data);

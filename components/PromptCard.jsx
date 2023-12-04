@@ -24,7 +24,7 @@ const PromptCard = ({ post, handleClick, handleDelete, handleEdit }) => {
       <div className="flex justify-between gap-5 items-start">
         <div className="flex-1 flex justify-start items-center cursor-pointer gap-3">
           <Image
-            src={post.creator.image}
+            src={post.creator?.image}
             alt="User Image"
             width={40}
             height={40}

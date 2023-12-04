@@ -45,7 +45,7 @@ const Nav = () => {
             <Link href="/profile">
               <Image
                 alt="profile"
-                src={session?.user.image}
+                src={session?.user?.image}
                 width={37}
                 height={37}
                 className="rounded-full"
@@ -75,7 +75,7 @@ const Nav = () => {
           <div className="flex">
             <Image
               alt="profile"
-              src={session?.user.image}
+              src={session?.user?.image}
               width={37}
               height={37}
               className="rounded-full"
